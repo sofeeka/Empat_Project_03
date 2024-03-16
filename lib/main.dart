@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
+import 'MyAppBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,39 +32,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Color.fromRGBO(192, 188, 169, 100),
-          title: ClipRRect(
-            borderRadius: BorderRadius.circular(28),
-            child: Material(
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Title, author or ISBN',
-                  prefixIcon: const Icon(Icons.search),
-                  suffixIcon: const Icon(
-                    Icons.camera_alt_outlined,
-                    color: Colors.black,
-                  ),
-                  contentPadding: EdgeInsets.zero,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(28),
-                  ),
-                  enabled: false,
-                ),
-              ),
-            ),
-          ),
-          actions: const [
-            Icon(Icons.notifications_outlined),
-            SizedBox(
-              width: 10,
-            )
-          ],
-      ),
+      appBar: MyAppBar(),
     );
   }
 }
