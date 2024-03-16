@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Goodreads',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromRGBO(192, 188, 169, 100),
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(),
