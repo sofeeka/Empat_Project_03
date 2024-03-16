@@ -32,17 +32,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool showBorders = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70),
-        child: AppBar(
+      appBar: AppBar(
           backgroundColor: Color.fromRGBO(192, 188, 169, 100),
           title: ClipRRect(
-            borderRadius: BorderRadius.circular(40),
+            borderRadius: BorderRadius.circular(28),
             child: Material(
               child: TextField(
                 decoration: InputDecoration(
@@ -54,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   contentPadding: EdgeInsets.zero,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(360),
+                    borderRadius: BorderRadius.circular(28),
                   ),
                   enabled: false,
                 ),
@@ -67,7 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 10,
             )
           ],
-        ),
       ),
     );
   }
