@@ -8,7 +8,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromRGBO(192, 188, 169, 100),
+      backgroundColor: const Color.fromRGBO(192, 188, 169, 100),
       title: ClipRRect(
         borderRadius: BorderRadius.circular(28),
         child: Material(

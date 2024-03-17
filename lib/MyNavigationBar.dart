@@ -27,7 +27,7 @@ class MyNavigationBar extends StatelessWidget {
         NavigationDestination(
           icon: Icon(const IconData(0xf037, fontFamily: 'MaterialIcons'),
               color: _iconColor),
-          label: 'Home',
+          label: 'Discover',
           selectedIcon: Icon(
             const IconData(
               0xe248,
