@@ -4,6 +4,5 @@ class Book {
   final String? name;
   final String? genre;
 
-  Book(this.filePath, this.author, this.name, this.genre);
-
+  Book({this.filePath, this.author, this.name, this.genre});
 }

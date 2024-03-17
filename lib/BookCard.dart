@@ -1,9 +1,10 @@
+import 'package:empat_project_03/Book.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
-  const BookCard({super.key});
+  const BookCard({super.key, required this.book});
 
-  // final Book book;
+  final Book book;
 
   static const bool showThickBorders = false;
   static const double padding = 15.0;
