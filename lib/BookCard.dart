@@ -1,7 +1,5 @@
 import 'package:empat_project_03/Book.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BookCard extends StatelessWidget {
   const BookCard({super.key, required this.book});
@@ -134,7 +132,25 @@ class BookCard extends StatelessWidget {
                                 ],
                               ),
                             ),
-                          )
+                          ),
+                          const SizedBox(height: bigPadding),
+                          const Row(
+                            children: [
+                              Text(
+                                'Rate this book: ',
+                                style: TextStyle(
+                                  color: Colors.black45,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              Icon(Icons.star, size: 15, color: Colors.blueGrey),
+                              Icon(Icons.star, size: 15, color: Colors.blueGrey),
+                              Icon(Icons.star, size: 15, color: Colors.blueGrey),
+                              Icon(Icons.star, size: 15, color: Colors.blueGrey),
+                              Icon(Icons.star, size: 15, color: Colors.blueGrey),
+                            ],
+                          ),
                         ],
                       ),
                     ),
