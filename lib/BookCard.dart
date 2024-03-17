@@ -1,5 +1,4 @@
 import 'package:empat_project_03/Book.dart';
-import 'package:empat_project_03/BookCard.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
@@ -8,12 +7,13 @@ class BookCard extends StatelessWidget {
   final Book book;
 
   static const bool showThickBorders = false;
-  static const double padding = 15.0;
+  static const double bigPadding = 15.0;
+  static const double textPadding = 5.0;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(padding, padding, padding, 0),
+      padding: const EdgeInsets.fromLTRB(bigPadding, bigPadding, bigPadding, 0),
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(
@@ -33,20 +33,83 @@ class BookCard extends StatelessWidget {
         child: SizedBox(
           height: 200,
           width: double.maxFinite,
-          child: Row(
+          child: Column(
             children: [
-              Expanded(
-                flex: 1,
-                child: BookCover(book: book),
+              SizedBox(
+                height: 30,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    top: textPadding,
+                    left: 2 * textPadding,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Text('New Releases in'),
+                      const SizedBox(
+                        width: textPadding,
+                      ),
+                      Text(
+                        book.genre,
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 0, 99, 94),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              const Expanded(
-                flex: 2,
-                child: Column(
+              SizedBox(
+                height: 140,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: bigPadding,
+                          bottom: bigPadding,
+                        ),
+                        child: Image.network(book.filePath),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            height: bigPadding,
+                          ),
+                          Text(
+                            book.name,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: bigPadding,
+                          ),
+                          Text(
+                            'by ${book.author}',
+                            style: const TextStyle(
+                                color: Colors.black45,
+                                fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          const SizedBox(height: bigPadding,),
+                        ],
+                      ),
+                    )
                   ],
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 30,
+              ),
             ],
           ),
         ),
