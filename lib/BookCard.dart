@@ -1,4 +1,5 @@
 import 'package:empat_project_03/Book.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
@@ -8,7 +9,7 @@ class BookCard extends StatelessWidget {
 
   static const bool showThickBorders = false;
   static const double bigPadding = 15.0;
-  static const double textPadding = 5.0;
+  static const double smallPadding = 5.0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,15 +40,15 @@ class BookCard extends StatelessWidget {
                 height: 30,
                 child: Padding(
                   padding: const EdgeInsets.only(
-                    top: textPadding,
-                    left: 2 * textPadding,
+                    top: smallPadding,
+                    left: 2 * smallPadding,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       const Text('New Releases in'),
                       const SizedBox(
-                        width: textPadding,
+                        width: smallPadding,
                       ),
                       Text(
                         book.genre,
@@ -95,15 +96,47 @@ class BookCard extends StatelessWidget {
                           Text(
                             'by ${book.author}',
                             style: const TextStyle(
-                                color: Colors.black45,
-                                fontSize: 12,
+                              color: Colors.black45,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          const SizedBox(height: bigPadding,),
+                          const SizedBox(
+                            height: bigPadding,
+                          ),
+                          GestureDetector(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 71, 170, 113),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: const Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(width: 2 * smallPadding),
+                                  Column(
+                                    children: [
+                                      SizedBox(height: smallPadding),
+                                      Text(
+                                        'Want to Read',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      SizedBox(height: smallPadding),
+                                    ],
+                                  ),
+                                  Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
