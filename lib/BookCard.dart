@@ -1,4 +1,5 @@
 import 'package:empat_project_03/Book.dart';
+import 'package:empat_project_03/BookCard.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
@@ -29,25 +30,21 @@ class BookCard extends StatelessWidget {
             ),
           ],
         ),
-        child: const SizedBox(
+        child: SizedBox(
           height: 200,
           width: double.maxFinite,
           child: Row(
             children: [
               Expanded(
                 flex: 1,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(Icons.image, size: 100),
-                  ],
-                ),
+                child: BookCover(book: book),
               ),
-              Expanded(
-                flex: 3,
+              const Expanded(
+                flex: 2,
                 child: Column(
-                  children: [],
+                  children: [
+
+                  ],
                 ),
               )
             ],

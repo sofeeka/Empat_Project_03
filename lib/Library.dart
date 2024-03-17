@@ -10,7 +10,7 @@ class Library
     Book b1 = Book(
       author: 'Hanya Yanagihara',
       name: 'A Little Life',
-      filePath: 'bookcovers//a_little_life.jpg',
+      filePath: 'https://m.media-amazon.com/images/I/91YZIKXZ+bL._SL1500_.jpg',
       genre: 'Novel'
     );
 
