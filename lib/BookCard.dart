@@ -1,13 +1,13 @@
 import 'package:empat_project_03/Book.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BookCard extends StatelessWidget {
   const BookCard({super.key, required this.book});
 
   final Book book;
 
-  static const bool showThickBorders = false;
   static const double bigPadding = 15.0;
   static const double smallPadding = 5.0;
 
@@ -17,9 +17,7 @@ class BookCard extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(bigPadding, bigPadding, bigPadding, 0),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-              color: showThickBorders ? Colors.black : Colors.black26,
-              width: showThickBorders ? 2 : 0.5),
+          border: Border.all(color: Colors.black26, width: 0.5),
           borderRadius: BorderRadius.circular(3),
           color: Colors.white,
           boxShadow: [
@@ -61,23 +59,26 @@ class BookCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 140,
+              Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Expanded(
-                      flex: 1,
+                    SizedBox(
+                      width: 110,
                       child: Padding(
                         padding: const EdgeInsets.only(
                           top: bigPadding,
-                          bottom: bigPadding,
+                          right: bigPadding,
+                          left: bigPadding,
                         ),
-                        child: Image.network(book.filePath),
+                        child: Column(
+                          children: [
+                            Image.network(book.filePath),
+                          ],
+                        ),
                       ),
                     ),
                     Expanded(
-                      flex: 2,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -139,9 +140,6 @@ class BookCard extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 30,
               ),
             ],
           ),
