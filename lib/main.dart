@@ -1,7 +1,8 @@
-import 'MyNavigationBar.dart';
 import 'package:flutter/material.dart';
 
+import 'MyNavigationBar.dart';
 import 'MyAppBar.dart';
+import 'Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: MyHomePage'),
+    Home(),
     Text(
       'Index 1: My Books',
     ),
@@ -65,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: const MyAppBar(),
       body: _widgetOptions.elementAt(_selectedIndex),
+      backgroundColor: const Color.fromRGBO(249, 248, 244, 15),
       bottomNavigationBar: MyNavigationBar(
         selectedIndex: _selectedIndex,
         onDestinationSelected: _onDestinationSelected,
