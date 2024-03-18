@@ -8,6 +8,8 @@ class BookCardRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           'Rate this book: ',
