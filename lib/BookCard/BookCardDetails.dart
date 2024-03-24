@@ -2,6 +2,8 @@ import 'package:empat_project_03/Book.dart';
 import 'package:empat_project_03/BookCard/BookCardRating.dart';
 import 'package:empat_project_03/paddings.dart';
 import 'package:flutter/material.dart';
+import 'package:empat_project_03/Colors.dart';
+
 
 class BookCardDetails extends StatelessWidget {
   const BookCardDetails({
@@ -43,7 +45,7 @@ class BookCardDetails extends StatelessWidget {
           GestureDetector(
             child: Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 71, 170, 113),
+                color: bookCardButtonColor,
                 borderRadius: BorderRadius.circular(5),
               ),
               child: const Row(
