@@ -1,10 +1,10 @@
 import 'package:empat_project_03/Book.dart';
 import 'package:flutter/material.dart';
-import 'package:empat_project_03/BookCardImage.dart';
-import 'package:empat_project_03/BookCardDetails.dart';
+import 'package:empat_project_03/BookCard/BookCardImage.dart';
+import 'package:empat_project_03/BookCard/BookCardDetails.dart';
 
-class BookCardMainBody extends StatelessWidget {
-  const BookCardMainBody({
+class BookCardBody extends StatelessWidget {
+  const BookCardBody({
     super.key,
     required this.book,
   });

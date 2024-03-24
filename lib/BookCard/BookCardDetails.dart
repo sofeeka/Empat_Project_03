@@ -1,5 +1,5 @@
 import 'package:empat_project_03/Book.dart';
-import 'package:empat_project_03/BookCardRating.dart';
+import 'package:empat_project_03/BookCard/BookCardRating.dart';
 import 'package:empat_project_03/paddings.dart';
 import 'package:flutter/material.dart';
 

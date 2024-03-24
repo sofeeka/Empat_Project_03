@@ -1,8 +1,8 @@
 import 'package:empat_project_03/Book.dart';
-import 'package:empat_project_03/BookCardHeader.dart';
-import 'package:empat_project_03/BookCardMainBody.dart';
+import 'package:empat_project_03/BookCard/BookCardHeader.dart';
+import 'package:empat_project_03/BookCard/BookCardBody.dart';
 import 'package:flutter/material.dart';
-import 'paddings.dart';
+import 'package:empat_project_03/paddings.dart';
 
 class BookCard extends StatelessWidget {
   const BookCard({super.key, required this.book});
@@ -20,7 +20,7 @@ class BookCard extends StatelessWidget {
           child: Column(
             children: [
               BookCardHeader(book: book),
-              BookCardMainBody(book: book),
+              BookCardBody(book: book),
             ],
           ),
         ),
