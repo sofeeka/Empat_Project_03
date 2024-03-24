@@ -54,6 +54,12 @@ class Library
     books.add(b4);
     books.add(b5);
     books.add(b6);
+    books.add(b1);
+    books.add(b2);
+    books.add(b3);
+    books.add(b4);
+    books.add(b5);
+    books.add(b6);
 
     return books;
   }

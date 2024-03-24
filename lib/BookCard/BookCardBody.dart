@@ -17,7 +17,7 @@ class BookCardBody extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          BookCardImage(book: book),
+          BookCardImage(book: book, width: 110,),
           BookCardDetails(book: book),
         ],
       ),

@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:empat_project_03/Colors.dart';
+import 'package:empat_project_03/colors/Colors.dart';
+import 'package:empat_project_03/bars/MyAppBar.dart';
 
-import 'MyAppBar.dart';
 import 'Home.dart';
+import 'my_books.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   static const List<Tab> _widgetOptions = <Tab>[
     Tab(child: Home()),
-    Tab(child: Text('Index 1: My Books')),
-    Tab(child: Text('Index 2: Home')),
+    Tab(child: MyBooks()),
+    Tab(child: Text('Index 2: Explore')),
     Tab(child: Text('Index 3: Search')),
     Tab(child: Text('Index 4: More'))
   ];
@@ -51,16 +52,20 @@ class _MyHomePageState extends State<MyHomePage>
   static const List<Icon> _tabIcons = <Icon>[
     Icon(Icons.home_outlined, color: iconColor, size: iconSize),
     Icon(Icons.bookmarks_outlined, color: iconColor, size: iconSize),
-    Icon(IconData(0xf037, fontFamily: 'MaterialIcons'), color: iconColor, size: iconSize),
-    Icon(IconData(0xe801, fontFamily: _kFontFam), color: iconColor, size: iconSize),
+    Icon(IconData(0xf037, fontFamily: 'MaterialIcons'),
+        color: iconColor, size: iconSize),
+    Icon(IconData(0xe801, fontFamily: _kFontFam),
+        color: iconColor, size: iconSize),
     Icon(Icons.format_list_bulleted, color: iconColor, size: iconSize),
   ];
 
   static const List<Icon> _selectedTabIcons = <Icon>[
     Icon(Icons.home, color: iconColor, size: iconSize),
     Icon(Icons.bookmarks, color: iconColor, size: iconSize),
-    Icon(IconData(0xe248, fontFamily: 'MaterialIcons'), color: iconColor, size: iconSize),
-    Icon(IconData(0xe800, fontFamily: _kFontFam), color: iconColor, size: iconSize),
+    Icon(IconData(0xe248, fontFamily: 'MaterialIcons'),
+        color: iconColor, size: iconSize),
+    Icon(IconData(0xe800, fontFamily: _kFontFam),
+        color: iconColor, size: iconSize),
     Icon(Icons.format_list_bulleted, color: iconColor, size: iconSize),
   ];
 
@@ -110,6 +115,48 @@ class _MyHomePageState extends State<MyHomePage>
                   (i == _selectedIndex ? _selectedTabIcons[i] : _tabIcons[i])),
         ),
         onTap: _onTabIndexChanged,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(child: Text('Menu')),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                _onTabIndexChanged(0);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('My Books'),
+              onTap: () {
+                _onTabIndexChanged(1);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Explore'),
+              onTap: () {
+                _onTabIndexChanged(2);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Search'),
+              onTap: () {
+                _onTabIndexChanged(3);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('More'),
+              onTap: () {
+                _onTabIndexChanged(4);
+                Navigator.pop(context);
+              },
+            )
+          ],
+        ),
       ),
     );
   }

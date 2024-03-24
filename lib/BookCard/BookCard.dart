@@ -2,7 +2,7 @@ import 'package:empat_project_03/Book.dart';
 import 'package:empat_project_03/BookCard/BookCardHeader.dart';
 import 'package:empat_project_03/BookCard/BookCardBody.dart';
 import 'package:flutter/material.dart';
-import 'package:empat_project_03/paddings.dart';
+import 'package:empat_project_03/paddings/paddings.dart';
 
 class BookCard extends StatelessWidget {
   const BookCard({super.key, required this.book});
@@ -12,7 +12,7 @@ class BookCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(bigPadding, bigPadding, bigPadding, 0),
+      padding: const EdgeInsets.fromLTRB(bigPadding, bigPadding/2, bigPadding, bigPadding/2),
       child: Container(
         decoration: buildBoxDecorationForBookCard(),
         child: SizedBox(
