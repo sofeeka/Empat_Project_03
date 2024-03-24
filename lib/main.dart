@@ -97,9 +97,12 @@ class _MyHomePageState extends State<MyHomePage>
     });
   }
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: const MyAppBar(),
       body: TabBarView(
         controller: _controller,
@@ -157,6 +160,20 @@ class _MyHomePageState extends State<MyHomePage>
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 6,
+        splashColor: Color.fromARGB(
+          bookCardButtonColor.alpha,
+          bookCardButtonColor.red - 40,
+          bookCardButtonColor.green - 40,
+          bookCardButtonColor.blue - 40,
+        ),
+        backgroundColor: bookCardButtonColor,
+        onPressed: () {
+          _scaffoldKey.currentState!.openDrawer(); // Access the scaffold state
+        },
+        child: const Icon(Icons.add, color: Colors.white),
       ),
     );
   }
