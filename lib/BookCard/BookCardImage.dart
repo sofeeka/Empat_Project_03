@@ -14,21 +14,27 @@ class BookCardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 110,
-      child: Padding(
-        padding: const EdgeInsets.all(bigPadding),
-        child: Column(
-          children: [
-            Expanded(
-                child: Align(
-              alignment: Alignment.topCenter,
-              child: Image.network(
-                book.filePath,
-                fit: BoxFit.contain,
-              ),
-            )),
-          ],
+    return Material(
+      type: MaterialType.transparency,
+      child: Hero(
+        tag: book.id,
+        child: SizedBox(
+          width: 110,
+          child: Padding(
+            padding: const EdgeInsets.all(bigPadding),
+            child: Column(
+              children: [
+                Expanded(
+                    child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Image.network(
+                    book.filePath,
+                    fit: BoxFit.contain,
+                  ),
+                )),
+              ],
+            ),
+          ),
         ),
       ),
     );

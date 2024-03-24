@@ -17,9 +17,42 @@ class BookCardBody extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          BookCardImage(book: book, width: 110,),
+          GestureDetector(
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (_) => ImageDialog(
+                        book: book,
+                      ));
+            },
+            child: BookCardImage(
+              book: book,
+              width: 110,
+            ),
+          ),
           BookCardDetails(book: book),
         ],
+      ),
+    );
+  }
+}
+
+class ImageDialog extends StatelessWidget {
+  final Book book;
+
+  const ImageDialog({super.key, required this.book});
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Hero(
+        tag: book.id,
+        child: Container(
+          width: 200,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(book.filePath), fit: BoxFit.cover)),
+        ),
       ),
     );
   }
