@@ -16,7 +16,7 @@ class Library {
       author: 'Madeline Miller',
       name: 'The Song of Achilles',
       filePath:
-          'https://static.bookcity.pl/bigcovers/1/3/8/4/9781408891384.jpg',
+          'https://m.media-amazon.com/images/I/81msb6gUBTL._AC_UF894,1000_QL80_.jpg',
       genre: 'Greek Mythology',
       id: 'id2',
     );
@@ -33,7 +33,7 @@ class Library {
     Book b4 = Book(
       author: 'Jane Austin',
       name: 'Pride and Prejudice',
-      filePath: 'https://www.gutenberg.org/files/1342/1342-h/images/cover.jpg',
+      filePath: 'https://m.media-amazon.com/images/I/81RE22MUk7L._AC_UF1000,1000_QL80_.jpg',
       genre: 'Classics',
       id: 'id4',
     );
