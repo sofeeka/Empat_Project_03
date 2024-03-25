@@ -75,7 +75,7 @@ class Library {
     Book b9 = Book(
       author: 'J.K. Rowling',
       name: 'Harry Potter and the Philosopher\'s Stone',
-      filePath: 'https://nicolaalter.files.wordpress.com/2014/12/harry_potter_1998_adultedition.jpg',
+      filePath: 'https://i.pinimg.com/474x/8f/27/2b/8f272b7ebb4e7f225e373f94d43f9595.jpg',
       genre: 'Fantasy',
       id: 'id9',
     );

@@ -16,22 +16,28 @@ class MyBooks extends StatefulWidget {
 
 class _MyBooks extends State<MyBooks> {
   var books = Library.getBooks();
+  int crossAxisCount = 2;
 
   @override
   Widget build(BuildContext context) {
+    crossAxisCount = MediaQuery
+        .of(context)
+        .size
+        .width ~/ 150;
     return Padding(
       padding: const EdgeInsets.all(smallPadding),
       child: StaggeredGridView.countBuilder(
-        crossAxisCount: 2,
+        crossAxisCount: crossAxisCount,
         itemCount: books.length * 10,
         itemBuilder: (BuildContext context, int index) {
-          return MyItemWidget(book: books.elementAt(index % books.length));
+          return MyItemWidget(book: books.elementAt(index % books.length),
+            crossAxisCount: crossAxisCount,);
         },
         staggeredTileBuilder: (int index) {
           return const StaggeredTile.fit(1);
         },
-        mainAxisSpacing: smallPadding,
-        crossAxisSpacing: smallPadding,
+        mainAxisSpacing: smallPadding * 1.5,
+        crossAxisSpacing: smallPadding * 1.5,
       ),
     );
   }
@@ -39,8 +45,10 @@ class _MyBooks extends State<MyBooks> {
 
 class MyItemWidget extends StatelessWidget {
   final Book book;
+  final int crossAxisCount;
 
-  const MyItemWidget({super.key, required this.book});
+  const MyItemWidget(
+      {super.key, required this.book, required this.crossAxisCount});
 
   @override
   Widget build(BuildContext context) {
@@ -55,13 +63,17 @@ class MyItemWidget extends StatelessWidget {
         }
 
         double aspectRatio = snapshot.data!.width / snapshot.data!.height;
-        double height = MediaQuery.of(context).size.width / 2 / aspectRatio;
+        double width = MediaQuery.of(context).size.width / crossAxisCount;
+        double height = width / aspectRatio;
 
-        return Container(
+        return SizedBox(
           height: height,
-          child: Image.network(
-            book.filePath,
-            fit: BoxFit.cover,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12.0),
+            child: Image.network(
+              book.filePath,
+              fit: BoxFit.cover,
+            ),
           ),
         );
       },
@@ -74,7 +86,7 @@ class MyItemWidget extends StatelessWidget {
 
     image.image.resolve(const ImageConfiguration()).addListener(
       ImageStreamListener(
-        (info, _) {
+            (info, _) {
           completer.complete(
             Size(
               info.image.width.toDouble(),
