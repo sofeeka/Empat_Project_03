@@ -56,12 +56,57 @@ class Library {
       id: 'id6',
     );
 
+    Book b7 = Book(
+      author: 'Brandon Sanderson',
+      name: 'The Way of Kings',
+      filePath: 'https://m.media-amazon.com/images/I/716RJ4qAyjL._AC_UF1000,1000_QL80_.jpg',
+      genre: 'Fantasy',
+      id: 'id7',
+    );
+
+    Book b8 = Book(
+      author: 'Haruki Murakami',
+      name: 'Norwegian Wood',
+      filePath: 'https://m.media-amazon.com/images/I/81zqVhvbHbL._AC_UF894,1000_QL80_.jpg',
+      genre: 'Fiction',
+      id: 'id8',
+    );
+
+    Book b9 = Book(
+      author: 'J.K. Rowling',
+      name: 'Harry Potter and the Philosopher\'s Stone',
+      filePath: 'https://nicolaalter.files.wordpress.com/2014/12/harry_potter_1998_adultedition.jpg',
+      genre: 'Fantasy',
+      id: 'id9',
+    );
+
+    Book b10 = Book(
+      author: 'George Orwell',
+      name: '1984',
+      filePath: 'https://m.media-amazon.com/images/I/61ZewDE3beL._AC_UF894,1000_QL80_.jpg',
+      genre: 'Classic',
+      id: 'id10',
+    );
+
+    Book b11 = Book(
+      author: 'Agatha Christie',
+      name: 'Murder on the Orient Express',
+      filePath: 'https://m.media-amazon.com/images/I/81gkOWZnIqL._AC_UF1000,1000_QL80_.jpg',
+      genre: 'Mystery',
+      id: 'id12',
+    );
+
     books.add(b1);
     books.add(b2);
     books.add(b3);
     books.add(b4);
     books.add(b5);
     books.add(b6);
+    books.add(b7);
+    books.add(b8);
+    books.add(b9);
+    books.add(b10);
+    books.add(b11);
 
     return books;
   }
