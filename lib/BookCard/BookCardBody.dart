@@ -1,4 +1,5 @@
 import 'package:empat_project_03/Book.dart';
+import 'package:empat_project_03/paddings/paddings.dart';
 import 'package:flutter/material.dart';
 import 'package:empat_project_03/BookCard/BookCardImage.dart';
 import 'package:empat_project_03/BookCard/BookCardDetails.dart';
@@ -18,13 +19,9 @@ class BookCardBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           GestureDetector(
-            onTap: () {
-              showDialog(
-                  context: context,
-                  builder: (_) => ImageDialog(
-                        book: book,
-                      ));
-            },
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => ImageDialog(book: book)),
+            ),
             child: BookCardImage(
               book: book,
               width: 110,
@@ -45,13 +42,11 @@ class ImageDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      backgroundColor: Colors.transparent,
       child: Hero(
         tag: book.id,
-        child: Container(
-          width: 200,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(book.filePath), fit: BoxFit.cover)),
+        child: Image.network(
+          book.filePath,
         ),
       ),
     );
