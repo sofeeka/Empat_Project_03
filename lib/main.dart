@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:empat_project_03/colors/Colors.dart';
 import 'package:empat_project_03/bars/MyAppBar.dart';
 
 import 'Home.dart';
-import 'my_books.dart';
+import 'MyBooks.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage>
     Tab(child: Text('Index 3: Search')),
     Tab(child: Text('Index 4: More'))
   ];
-  static const _kFontFam = 'MyFlutterApp';
 
   static const double iconSize = 24;
   static const List<Icon> _tabIcons = <Icon>[
@@ -54,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage>
     Icon(Icons.bookmarks_outlined, color: iconColor, size: iconSize),
     Icon(IconData(0xf037, fontFamily: 'MaterialIcons'),
         color: iconColor, size: iconSize),
-    Icon(IconData(0xe801, fontFamily: _kFontFam),
+    Icon(IconData(0xe801, fontFamily: 'MyFlutterApp'),
         color: iconColor, size: iconSize),
     Icon(Icons.format_list_bulleted, color: iconColor, size: iconSize),
   ];
@@ -64,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage>
     Icon(Icons.bookmarks, color: iconColor, size: iconSize),
     Icon(IconData(0xe248, fontFamily: 'MaterialIcons'),
         color: iconColor, size: iconSize),
-    Icon(IconData(0xe800, fontFamily: _kFontFam),
+    Icon(IconData(0xe800, fontFamily: 'MyFlutterApp'),
         color: iconColor, size: iconSize),
     Icon(Icons.format_list_bulleted, color: iconColor, size: iconSize),
   ];
@@ -114,8 +112,8 @@ class _MyHomePageState extends State<MyHomePage>
         tabs: List.generate(
           _widgetOptions.length,
           (i) => Tab(
-              child:
-                  (i == _selectedIndex ? _selectedTabIcons[i] : _tabIcons[i])),
+            child: (i == _selectedIndex ? _selectedTabIcons[i] : _tabIcons[i]),
+          ),
         ),
         onTap: _onTabIndexChanged,
       ),
@@ -171,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage>
         ),
         backgroundColor: bookCardButtonColor,
         onPressed: () {
-          _scaffoldKey.currentState!.openDrawer(); // Access the scaffold state
+          _scaffoldKey.currentState!.openDrawer();
         },
         child: const Icon(Icons.add, color: Colors.white),
       ),
