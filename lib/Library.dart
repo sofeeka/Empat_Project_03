@@ -1,8 +1,19 @@
 import 'package:empat_project_03/Book.dart';
 
 class Library {
-  static List<Book> getBooks() {
-    var books = <Book>[];
+  static List<Book> books = <Book>[];
+
+  static List<Book> getBooks()
+  {
+    if(books.isEmpty) {
+      initialiseBooks();
+    }
+
+    return books;
+  }
+
+  static void initialiseBooks() {
+    books = <Book>[];
 
     Book b1 = Book(
       author: 'Hanya Yanagihara',
@@ -107,7 +118,5 @@ class Library {
     books.add(b9);
     books.add(b10);
     books.add(b11);
-
-    return books;
   }
 }

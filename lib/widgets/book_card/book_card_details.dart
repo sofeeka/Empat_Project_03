@@ -4,14 +4,25 @@ import 'package:empat_project_03/themes/paddings.dart';
 import 'package:flutter/material.dart';
 import 'package:empat_project_03/themes/colors.dart';
 
-
-class BookCardDetails extends StatelessWidget {
+class BookCardDetails extends StatefulWidget {
   const BookCardDetails({
     super.key,
     required this.book,
   });
 
   final Book book;
+
+  @override
+  State<BookCardDetails> createState() => _BookCardDetailsState();
+}
+
+class _BookCardDetailsState extends State<BookCardDetails> {
+
+  void onRatingChanged(int newRating) {
+    setState(() {
+      widget.book.rating = newRating;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +34,7 @@ class BookCardDetails extends StatelessWidget {
             height: bigPadding,
           ),
           Text(
-            book.name,
+            widget.book.name,
             style: const TextStyle(
               fontWeight: FontWeight.w500,
             ),
@@ -32,7 +43,7 @@ class BookCardDetails extends StatelessWidget {
             height: bigPadding,
           ),
           Text(
-            'by ${book.author}',
+            'by ${widget.book.author}',
             style: const TextStyle(
               color: Colors.black45,
               fontSize: 12,
@@ -45,7 +56,7 @@ class BookCardDetails extends StatelessWidget {
           GestureDetector(
             child: Container(
               decoration: BoxDecoration(
-                color: bookCardButtonColor,
+                color: bookCardButtonColor[widget.book.rating ?? 0],
                 borderRadius: BorderRadius.circular(5),
               ),
               child: const Row(
@@ -73,7 +84,10 @@ class BookCardDetails extends StatelessWidget {
             ),
           ),
           const SizedBox(height: bigPadding),
-          const BookCardRating(),
+          BookCardRating(
+            initialRating: widget.book.rating ?? 0,
+            onRatingChanged: onRatingChanged,
+          ),
         ],
       ),
     );

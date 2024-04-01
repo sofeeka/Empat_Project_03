@@ -97,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  final Color FABColor = bookCardButtonColor[bookCardButtonColor.length - 1]; // last color - 5 star rating
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,12 +163,12 @@ class _MyHomePageState extends State<MyHomePage>
       floatingActionButton: FloatingActionButton(
         elevation: 6,
         splashColor: Color.fromARGB(
-          bookCardButtonColor.alpha,
-          bookCardButtonColor.red - 40,
-          bookCardButtonColor.green - 40,
-          bookCardButtonColor.blue - 40,
+          FABColor.alpha,
+          FABColor.red - 40,
+          FABColor.green - 40,
+          FABColor.blue - 40,
         ),
-        backgroundColor: bookCardButtonColor,
+        backgroundColor: FABColor,
         onPressed: () {
           _scaffoldKey.currentState!.openDrawer();
         },

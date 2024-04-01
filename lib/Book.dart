@@ -8,6 +8,7 @@ class Book {
   final String id;
   late int width;
   late int height;
+  int? rating;
 
   Book({
     required this.filePath,

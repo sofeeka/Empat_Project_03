@@ -38,7 +38,7 @@ class BookCard extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 4,
-            offset: const Offset(0, 2), // changes the shadow direction
+            offset: const Offset(0, 2),
           ),
         ],
       );
