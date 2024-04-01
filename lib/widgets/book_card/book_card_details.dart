@@ -56,7 +56,7 @@ class _BookCardDetailsState extends State<BookCardDetails> {
           GestureDetector(
             child: Container(
               decoration: BoxDecoration(
-                color: bookCardButtonColor[widget.book.rating ?? 0],
+                color: bookCardButtonColorList[widget.book.rating ?? 0],
                 borderRadius: BorderRadius.circular(5),
               ),
               child: const Row(

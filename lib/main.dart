@@ -1,3 +1,4 @@
+import 'package:empat_project_03/screens/button_set_state_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:empat_project_03/themes/colors.dart';
 import 'package:empat_project_03/bars/MyAppBar.dart';
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage>
   static const List<Tab> _widgetOptions = <Tab>[
     Tab(child: Home()),
     Tab(child: MyBooks()),
-    Tab(child: Text('Index 2: Explore')),
+    Tab(child: MyButton()),
     Tab(child: Text('Index 3: Search')),
     Tab(child: Text('Index 4: More'))
   ];
@@ -97,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final Color FABColor = bookCardButtonColor[bookCardButtonColor.length - 1]; // last color - 5 star rating
+  final Color FABColor = bookCardButtonColorList[bookCardButtonColorList.length - 1]; // last color - 5 star rating
   @override
   Widget build(BuildContext context) {
     return Scaffold(

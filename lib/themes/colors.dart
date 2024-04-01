@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 const Color appBarColor = Color.fromRGBO(192, 188, 169, 100);
@@ -10,7 +8,7 @@ const Color homeBackground = Color.fromRGBO(192, 188, 169, 100);
 
 const Color bookCardBackground = Color.fromARGB(255, 255, 255, 255);
 
-const List<Color> bookCardButtonColor =
+const List<Color> bookCardButtonColorList =
 [
   Colors.black12,
   Colors.red,

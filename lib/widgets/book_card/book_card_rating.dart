@@ -5,8 +5,11 @@ class BookCardRating extends StatefulWidget {
   final int initialRating;
   final void Function(int) onRatingChanged;
 
-  const BookCardRating(
-      {super.key, required this.initialRating, required this.onRatingChanged});
+  const BookCardRating({
+    super.key,
+    required this.initialRating,
+    required this.onRatingChanged,
+  });
 
   @override
   State<BookCardRating> createState() => _BookCardRatingState();
@@ -47,7 +50,9 @@ class _BookCardRatingState extends State<BookCardRating> {
             child: Icon(
               Icons.star,
               size: 13,
-              color: index < rating ? bookCardButtonColor[rating] : Colors.grey,
+              color: index < rating
+                  ? bookCardButtonColorList[rating]
+                  : Colors.grey,
             ),
           ),
         ),
