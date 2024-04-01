@@ -61,7 +61,7 @@ flutter:
   fonts:
     - family:  MyFlutterApp
       fonts:
-        - asset: lib/fonts/MyFlutterApp.ttf
+        - asset: lib/themes/my_font.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

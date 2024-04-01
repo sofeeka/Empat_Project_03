@@ -1,5 +1,5 @@
 import 'package:empat_project_03/Book.dart';
-import 'package:empat_project_03/paddings/paddings.dart';
+import 'package:empat_project_03/themes/paddings.dart';
 import 'package:flutter/material.dart';
 
 class BookCardImage extends StatelessWidget {

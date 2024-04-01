@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:empat_project_03/colors/Colors.dart';
+import 'package:empat_project_03/themes/colors.dart';
 import 'package:empat_project_03/bars/MyAppBar.dart';
 
-import 'Home.dart';
-import 'MyBooks.dart';
+import 'screens/home_screen.dart';
+import 'screens/books_screen.dart';
 
 void main() {
   runApp(const MyApp());

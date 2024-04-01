@@ -1,6 +1,6 @@
 import 'package:empat_project_03/Book.dart';
 import 'package:flutter/material.dart';
-import 'package:empat_project_03/paddings/paddings.dart';
+import 'package:empat_project_03/themes/paddings.dart';
 
 class BookCardHeader extends StatelessWidget {
   const BookCardHeader({

@@ -1,8 +1,8 @@
 import 'package:empat_project_03/Book.dart';
-import 'package:empat_project_03/BookCard/BookCardRating.dart';
-import 'package:empat_project_03/paddings/paddings.dart';
+import 'package:empat_project_03/widgets/book_card/book_card_rating.dart';
+import 'package:empat_project_03/themes/paddings.dart';
 import 'package:flutter/material.dart';
-import 'package:empat_project_03/colors/Colors.dart';
+import 'package:empat_project_03/themes/colors.dart';
 
 
 class BookCardDetails extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:empat_project_03/Book.dart';
 import 'package:flutter/material.dart';
-import 'package:empat_project_03/BookCard/BookCardImage.dart';
-import 'package:empat_project_03/BookCard/BookCardDetails.dart';
+import 'package:empat_project_03/widgets/book_card/book_card_image.dart';
+import 'package:empat_project_03/widgets/book_card/book_card_details.dart';
 
 class BookCardBody extends StatelessWidget {
   const BookCardBody({
