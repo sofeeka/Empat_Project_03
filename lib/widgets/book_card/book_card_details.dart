@@ -4,25 +4,13 @@ import 'package:empat_project_03/themes/paddings.dart';
 import 'package:flutter/material.dart';
 import 'package:empat_project_03/themes/colors.dart';
 
-class BookCardDetails extends StatefulWidget {
+class BookCardDetails extends StatelessWidget{
   const BookCardDetails({
-    super.key,
     required this.book,
+    super.key,
   });
 
   final Book book;
-
-  @override
-  State<BookCardDetails> createState() => _BookCardDetailsState();
-}
-
-class _BookCardDetailsState extends State<BookCardDetails> {
-
-  void onRatingChanged(int newRating) {
-    setState(() {
-      widget.book.rating = newRating;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +22,7 @@ class _BookCardDetailsState extends State<BookCardDetails> {
             height: bigPadding,
           ),
           Text(
-            widget.book.name,
+            book.name,
             style: const TextStyle(
               fontWeight: FontWeight.w500,
             ),
@@ -43,7 +31,7 @@ class _BookCardDetailsState extends State<BookCardDetails> {
             height: bigPadding,
           ),
           Text(
-            'by ${widget.book.author}',
+            'by ${book.author}',
             style: const TextStyle(
               color: Colors.black45,
               fontSize: 12,
@@ -56,7 +44,7 @@ class _BookCardDetailsState extends State<BookCardDetails> {
           GestureDetector(
             child: Container(
               decoration: BoxDecoration(
-                color: bookCardButtonColorList[widget.book.rating ?? 0],
+                color: bookCardButtonColorList[book.rating ?? 0],
                 borderRadius: BorderRadius.circular(5),
               ),
               child: const Row(
@@ -84,10 +72,7 @@ class _BookCardDetailsState extends State<BookCardDetails> {
             ),
           ),
           const SizedBox(height: bigPadding),
-          BookCardRating(
-            initialRating: widget.book.rating ?? 0,
-            onRatingChanged: onRatingChanged,
-          ),
+          BookCardRating(bookId: book.id,),
         ],
       ),
     );

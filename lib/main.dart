@@ -1,13 +1,20 @@
+import 'package:empat_project_03/Library.dart';
 import 'package:empat_project_03/screens/button_set_state_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:empat_project_03/themes/colors.dart';
 import 'package:empat_project_03/bars/MyAppBar.dart';
+import 'package:provider/provider.dart';
 
 import 'screens/home_screen.dart';
 import 'screens/books_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => LibraryModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,15 +24,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Goodreads',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromRGBO(192, 188, 169, 100),
-          primary: const Color.fromRGBO(192, 188, 169, 100),
-        ),
-        useMaterial3: true,
-      ),
+      theme: buildThemeData(),
       home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
+    );
+  }
+
+  ThemeData buildThemeData() {
+    return ThemeData(
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: const Color.fromRGBO(192, 188, 169, 100),
+        primary: const Color.fromRGBO(192, 188, 169, 100),
+      ),
+      useMaterial3: true,
     );
   }
 }

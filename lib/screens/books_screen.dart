@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:empat_project_03/themes/paddings.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:provider/provider.dart';
 
 class MyBooks extends StatefulWidget {
   const MyBooks({super.key});
@@ -15,23 +16,23 @@ class MyBooks extends StatefulWidget {
 }
 
 class _MyBooks extends State<MyBooks> {
-  var books = Library.getBooks();
   int crossAxisCount = 2;
 
   @override
   Widget build(BuildContext context) {
-    crossAxisCount = MediaQuery
-        .of(context)
-        .size
-        .width ~/ 150;
+    final library = Provider.of<LibraryModel>(context);
+    crossAxisCount = MediaQuery.of(context).size.width ~/ 150;
+
     return Padding(
       padding: const EdgeInsets.all(smallPadding),
       child: StaggeredGridView.countBuilder(
         crossAxisCount: crossAxisCount,
-        itemCount: books.length * 10,
+        itemCount: library.books.length * 10,
         itemBuilder: (BuildContext context, int index) {
-          return MyItemWidget(book: books.elementAt(index % books.length),
-            crossAxisCount: crossAxisCount,);
+          return MyItemWidget(
+            book: library.books.elementAt(index % library.books.length),
+            crossAxisCount: crossAxisCount,
+          );
         },
         staggeredTileBuilder: (int index) {
           return const StaggeredTile.fit(1);
@@ -86,7 +87,7 @@ class MyItemWidget extends StatelessWidget {
 
     image.image.resolve(const ImageConfiguration()).addListener(
       ImageStreamListener(
-            (info, _) {
+        (info, _) {
           completer.complete(
             Size(
               info.image.width.toDouble(),

@@ -18,6 +18,7 @@ class Book {
     required this.id,
   }){
     _calculateImageDimensions();
+    rating = 0;
   }
 
   void _calculateImageDimensions() {
